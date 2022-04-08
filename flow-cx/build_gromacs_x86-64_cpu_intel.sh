@@ -19,7 +19,9 @@ PARALLEL=20
 
 module purge
 module load gcc/10.3.0 cmake/3.21.1
+#module load gcc/8.4.0 cmake/3.21.1
 . /home/center/opt/x86_64/cores/intel/compilers_and_libraries_2020.4.304/linux/bin/compilervars.sh intel64
+#. /home/center/opt/x86_64/cores/intel/compilers_and_libraries_2019.5.281/linux/bin/compilervars.sh intel64
 
 #cd ${WORKDIR}
 #if [ -d gromacs-${VERSION} ]; then
@@ -81,7 +83,7 @@ cd ..
 
 # compiler setting for MPI versions
 export CC=mpiicc
-export CXX=mpicpc
+export CXX=mpiicpc
 export F77=mpiifort
 export F90=mpiifort
 export FC=mpiifort
@@ -96,7 +98,7 @@ cmake .. \
    -DGMX_GPU=OFF \
    -DGMX_DOUBLE=OFF \
    -DGMX_THREAD_MPI=OFF \
-   -DGMX_BUILD_OWN_FFTW=OFF
+   -DGMX_BUILD_OWN_FFTW=OFF \
    -DGMX_FFT_LIBRARY=mkl
 #   -DGMX_BUILD_OWN_FFTW=ON \
 #   -DREGRESSIONTEST_DOWNLOAD=OFF \
