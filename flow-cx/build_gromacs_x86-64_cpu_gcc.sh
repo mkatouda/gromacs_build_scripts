@@ -60,8 +60,6 @@ cmake .. \
 make -j${PARALLEL} && make install
 cd ..
 
-exit 0
-
 # double precision, no MPI
 mkdir build_${ARCH}_dp_cpu_nompi_${COMPILER}
 cd build_${ARCH}_dp_cpu_nompi_${COMPILER}
